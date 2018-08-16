@@ -1,5 +1,5 @@
 # 1
-Goal: have a working REST APIs with no persistent database.
+### Goal: have a working REST APIs with no persistent database.
 
 ## Prerequisite knowledge
 The basic concepts of APIs and REST can be found on these sites: 
@@ -20,11 +20,13 @@ import (
 )
 
 func main() {
-    http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-        fmt.Fprintf(w, "Hello, %q", html.EscapeString(r.URL.Path))
-    })
-
+    http.HandleFunc("/", handler)
     log.Fatal(http.ListenAndServe(":8080", nil))
+}
 
+func handler(w http.ResponseWriter, r *http.Request){
+    fmt.Fprintf(w, "Hello world!")
 }
 ```
+So what we just did was telling that when there is a http request to the "/" endpoint, we hand it to the handler function, which irrespective of the request coming, write the "Hello world" back as a response. And then we serve it at a specific port, combined with log's Fatal function to log whenever there is something wrong happened.
+Pretty neat, right?
