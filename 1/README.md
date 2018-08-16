@@ -32,4 +32,5 @@ func handler(w http.ResponseWriter, r *http.Request){
 ```
 So what we just did was telling that when there is a http request to the "/" endpoint, we hand it to the handler function, which irrespective of the request coming, write the "Hello world" back as a response. And then we serve it at a specific port, combined with log's Fatal function to log whenever there is something wrong happened.
 
+Try to run the program with the command ```go run main.go``` and hover to your browser with the address of ```localhost:8080``` and you will be greeted by the program.
 Pretty neat, right? Now let's get to the exciting part.
