@@ -34,3 +34,15 @@ So what we just did was telling that when there is a http request to the "/" end
 
 Try to run the program with the command ```go run main.go``` and hover to your browser with the address of ```localhost:8080``` and you will be greeted by the program.
 Pretty neat, right? Now let's get to the exciting part.
+
+First, we'll need to get a Go package from Gorilla toolkit called mux which we can get by the command
+```go get github.com/gorilla/mux```
+and which we will use to direct an incoming request to a specific routes. You can say it as a yellow pages for the HTTP requests.
+
+Let's say that we're going to make an API for an e-commerce, and first we'll start with its products. The endpoints that we'll probably need are:
+- ```/products``` (GET) --> retrieve all of the products listed
+- ```/product/{id}``` (GET) --> retrieve a product on a specific id
+- ```/product/{id}``` (POST) --> create a new product
+- ```/product/{id}``` (DELETE) --> delete a product
+
+
